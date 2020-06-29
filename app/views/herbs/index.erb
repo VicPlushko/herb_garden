@@ -1,0 +1,6 @@
+<h2>My Herbs</h2>
+<br>
+
+<% @herbs.each do |herb| %>
+     <p><a href="/herbs/<%= herb.id %>"><%= herb.name %></p>
+<% end %>
