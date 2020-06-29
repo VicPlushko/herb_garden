@@ -22,6 +22,21 @@
   <li><strong>Preparation and Dosage:</strong> <%= @herb.dosage %></li>
   <br>
   <li><strong>Considerations:</strong> <%= @herb.considerations %></li>
+</ul>
+<br>
+<br>
 
-  </ul>
+  <a href="/herbs/<%= @herb.id %>/edit"><button>Edit This Herb</button></a>
+  <br>
+  <br>
+  <a href="/herbs"><button>View All My Herbs</button></a>
+  <br>
+  <br>
+
+  <form method="POST" action="/herbs/<%= @herb.id %>">
+      <input type="hidden" id="hidden" name="_method" value="delete">
+      <input type="submit" value="Delete">
+  </form>
+
+  
   

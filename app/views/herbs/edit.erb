@@ -1,0 +1,36 @@
+<h2>Edit an Herb</h2>
+<br>
+
+<form method="POST" action="/herbs/<%= @herb.id %>">
+    <input type="hidden" id="hidden" name="_method" value="patch">
+        <p><strong>Name: </strong><input type="text" name="name" value="<%= @herb.name %>"></p>
+        <br>
+        <p><strong>Latin Name: </strong><input type="text" name="latin_name" value="<%= @herb.latin_name %>"></p>
+        <br>
+        <p><strong>Family: </strong><input type="text" name="family" value="<%= @herb.family %>"></p>
+        <br>
+        <p><strong>Medicinal Parts: </strong><input type="text" name="medicinal_parts" value="<%= @herb.medicinal_parts %>"></p>
+        <br>
+        <p><strong>Taste: </strong><input type="text" name="taste" value="<%= @herb.taste %>"></p>
+        <br>
+        <p><strong>Energetics: </strong><input type="text" name="energetics" value="<%= @herb.energetics %>"></p> 
+        <br>
+        <p><label name="actions"><strong>Actions: </strong>
+        <textarea name="actions"><%= @herb.actions %></textarea></p>
+        <br>
+        <p><label name="ideal_for"><strong>Ideal for Addressing: </strong>
+        <textarea name="ideal_for"><%= @herb.ideal_for %></textarea></p>
+        <br>
+        <p><label name="applications"><strong>Effective Applications: </strong>
+        <textarea name="applications"><%= @herb.applications %></textarea></p>
+        <br>
+        <p><label name="dosage"><strong>Preparation and Dosage: </strong>
+        <textarea name="dosage"><%= @herb.dosage %></textarea></p>
+        <br>
+        <p><label name="considerations"><strong>Considerations: </strong>
+        <textarea name="considerations"><%= @herb.considerations %></textarea></p>
+        <br>
+        <br>
+        <input type="submit" name="submit" value="Submit">
+
+</form>
