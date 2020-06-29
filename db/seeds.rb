@@ -10,7 +10,7 @@
             energetics: Faker::Lorem.sentence,
             actions: Faker::Lorem.paragraph,
             ideal_for: Faker::Lorem.paragraph,
-            applications: Faker::Lorem.paragraphs,
+            applications: Faker::Lorem.paragraph,
             dosage: Faker::Lorem.paragraph,
             considerations: Faker::Lorem.paragraph
             )
