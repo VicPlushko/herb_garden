@@ -1,5 +1,5 @@
 3.times do
-    user = User.create(username: Faker::FunnyName.name, email: Faker::Internet.email, password: Faker::Internet.password)
+    user = User.create(name: Faker::FunnyName.name, email: Faker::Internet.email, password: Faker::Internet.password)
     3.times do
         user.herbs.create(
             name: Faker::FunnyName.name, 
