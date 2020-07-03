@@ -41,6 +41,23 @@ class HerbsController < ApplicationController
     end
   end
 
+  get '/search' do
+    if logged_in?
+      erb :'/herbs/search'
+    else
+      redirect '/login'
+    end
+  end
+
+  get '/results' do
+    if logged_in?
+      @herbs = current_user.herbs.find_by(params[:search])
+      erb :'herbs/results'
+    else
+      redirect '/search'
+    end
+  end
+
   get "/herbs/:id" do
     if logged_in?
       @herb = current_user.herbs.find_by_id(params[:id])
