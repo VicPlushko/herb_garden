@@ -1,6 +1,10 @@
+<div class="topnav">
+  <a href="/logout" style="float: right">Logout</a>
+</div>
+
 <% @herbs.each do |herb|%>
 
-<%=herb.name%>
+    <p><a href="/herbs/<%=herb.id%>"><%=herb.name%></a></p>
 
 <% end %>
 

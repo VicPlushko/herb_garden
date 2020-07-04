@@ -1,7 +1,7 @@
 class HerbsController < ApplicationController
   get "/herbs" do
     if logged_in?
-      @herbs = current_user.herbs
+      @herbs = current_user.herbs.order('name ASC')
       erb :'herbs/index'
     else
       redirect "/login"
@@ -51,7 +51,7 @@ class HerbsController < ApplicationController
 
   get '/results' do
     if logged_in?
-      @herbs = Herb.search(params[:search])
+      @herbs = Herb.search(params[:search]).order('name ASC')
       erb :'herbs/results'
     else
       redirect '/search'
