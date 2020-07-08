@@ -10,17 +10,22 @@
     <title>HerbGarden</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sevillana">
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-    <div class="wrapper">
-      <% if logged_in?%>
-        <div class="header">
-          
-            <a href="/herbs/index" style="float: right">Home</a>
-            <a href="/logout" style="float: right">Logout</a>
-        </div>
+  <div class="wrapper">
+    <% if logged_in?%>
+      <div class="header">
+          <div class="logo_container">
+            <h1>Herb<span>Garden</span></h1> 
+          </div>
+          <ul class="navigation">
+            <a href="/herbs"><li>Home</li></a>
+            <a href="/about"><li>About</li></a>
+            <a href="/contact"><li>Contact</li></a>
+            <a href="/logout"><li>Logout</li></a>
+     </div>
       <% end %>
 
         <%= yield %>

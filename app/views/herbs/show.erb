@@ -2,7 +2,6 @@
 
 <h2><%= @herb.name %></h2>
 <br>
-
 <ul>
 
   <li><strong>Latin Name:</strong> <%= @herb.latin_name %></li>
@@ -29,20 +28,20 @@
 <br>
 
   <a href="/herbs/new"><button>Create a New Herb</button></a>
+  <a href="/search"><button>Search</button></a>
   <br>
   <br>
 
   <a href="/herbs/<%= @herb.id %>/edit"><button>Edit This Herb</button></a>
   
   <a href="/herbs"><button>View All My Herbs</button></a>
-  <br>
-  <br>
-  <a href="/search"><button>Search</button></a>
-
+  
+  <div class="delete">
   <form method="POST" action="/herbs/<%= @herb.id %>">
       <input type="hidden" id="hidden" name="_method" value="delete">
       <input type="submit" value="Delete">
   </form>
+  </div>
 
   
 
