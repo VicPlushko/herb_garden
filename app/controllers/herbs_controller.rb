@@ -51,7 +51,7 @@ class HerbsController < ApplicationController
 
   get '/results' do
     if logged_in?
-      @herbs = Herb.search(params[:search]).order('name ASC')
+      @herbs = current_user.herbs.search(params[:search]).order('name ASC')
       erb :'herbs/results'
     else
       redirect '/search'
@@ -106,7 +106,7 @@ class HerbsController < ApplicationController
           redirect "/herbs/#{herb.id}/edit"
         end
       else
-        redirect "/herbs/#{herb.id}/edit"
+        redirect "/herbs"
       end
     else
       redirect "/login"
@@ -115,7 +115,7 @@ class HerbsController < ApplicationController
 
   delete "/herbs/:id" do
     if logged_in?
-      herb = Herb.find_by_id(params[:id])
+      herb = current_user.herbs.find_by_id(params[:id])
       if herb
         herb.delete
       end
