@@ -15,6 +15,18 @@ class SessionsController < ApplicationController
 
   get '/logout' do
     session.clear
-    redirect '/login'
+    redirect '/'
+  end
+
+  get '/about' do
+    if logged_in?
+      erb :'sessions/about'
+    end
+  end
+
+  get '/contact' do
+    if logged_in?
+      erb :'sessions/contact'
+    end
   end
 end
