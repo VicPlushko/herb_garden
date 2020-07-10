@@ -32,10 +32,9 @@ class HerbsController < ApplicationController
         considerations: params[:considerations],
       )
       if herb.save
-        flash[:successful_herb] = "Successfully created a new herb"
         redirect "/herbs/#{herb.id}"
       else
-        redirect "/herbs/new"
+        redirect "/herbs"
       end
     else
       redirect "/login"

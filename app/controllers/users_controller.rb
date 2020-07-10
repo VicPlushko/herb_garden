@@ -15,6 +15,8 @@ class UsersController < ApplicationController
             if user.save
                 session[:user_id] = user.id
                 redirect '/herbs'
+            else
+                redirect '/signup'
             end
         end
     end

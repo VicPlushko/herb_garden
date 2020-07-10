@@ -1,4 +1,3 @@
-
 <h2><%= @herb.name %></h2>
 <br>
 <ul>
@@ -25,12 +24,9 @@
 </ul>
 <br>
 <br>
-<% if flash.has?(:successful_herb) %>
-  <%= flash[:successful_herb] %>
-<% end %>
 
   <a href="/herbs/new"><button>Create a New Herb</button></a>
-  <a href="/search"><button>Search</button></a>
+  <a href="/search" ><button>Search</button></a>
   <br>
   <br>
 
