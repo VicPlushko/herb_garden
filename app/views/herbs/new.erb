@@ -1,19 +1,36 @@
-<h2>Add a New Herb</h2>
+<h1>Add a New Herb</h1>
 <br>
 
 <form method="POST" action="/herbs">
-<p><strong>Name: </strong><input type="text" name="name"></p>
-<p><strong>Latin Name: </strong><input type="text" name="latin_name"></p>
-<p><strong>Family: </strong><input type="text" name="family"></p>
-<p><strong>Medicinal Parts: </strong><input type="text" name="medicinal_parts"></p>
-<p><strong>Taste: </strong><input type="text" name="taste"></p>
-<p><strong>Energetics: </strong><input type="text" name="energetics"></p> <p><strong>Actions: </strong><input type="text" name="latin_name"></p>
-<p><strong>Ideal for Addressing: </strong><input type="text" name="ideal_for"></p>
-<p><strong>Effective Applications: </strong><input type="text" name="applications"></p>
-<p><strong>Preparation and Dosage: </strong><input type="text" name="dosage"></p>
-<p><strong>Considerations: </strong><input type="text" name="considerations"></p>
-<br>
-<br>
-<input type="submit" name="submit" value="Submit">
-
+    <h3><p><strong>Name: </strong><input type="text" name="name"></p></h3>
+    <br>
+    <h3><p><strong>Latin Name: </strong><input type="text" name="latin_name"></p></h3>
+    <br>
+    <h3><p><strong>Family: </strong><input type="text" name="family"></p></h3>
+    <br>
+    <h3><p><strong>Medicinal Parts: </strong><input type="text" name="medicinal_parts"></p></h3>
+    <br>
+    <h3><p><strong>Taste: </strong><input type="text" name="taste"></p></h3>
+    <br>
+    <h3><p><strong>Energetics: </strong><input type="text" name="energetics"></p></h3> 
+    <br>
+    <h3><p><label name="actions"><strong>Actions: </strong>
+    <textarea name="actions"></textarea></p></h3>
+    <br>
+    <h3><p><label name="ideal_for"><strong>Ideal for Addressing: </strong>
+    <textarea name="ideal_for"></textarea></p></h3>
+    <br>
+    <h3><p><label name="applications"><strong>Effective Applications: </strong>
+    <textarea name="applications"></textarea></p></h3>
+    <br>
+    <h3><p><label name="dosage"><strong>Preparation and Dosage: </strong>
+    <textarea name="dosage"></textarea></p></h3>
+    <br>
+    <h3><p><label name="considerations"><strong>Considerations: </strong>
+    <textarea name="considerations"></textarea></p></h3>
+    <br>
+    <br>
+    <input type="submit" name="submit" value="Submit">
+    <a href="/search" style="float: right"><button>Search</button></a>
+    <a href="/herbs" style="float: right"><button>View All My Herbs</button></a>
 </form>

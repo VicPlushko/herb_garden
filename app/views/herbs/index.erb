@@ -1,6 +1,14 @@
-<h2>My Herbs</h2>
+
+<h1>My Herbs</h1>
 <br>
 
 <% @herbs.each do |herb| %>
-     <p><a href="/herbs/<%= herb.id %>"><%= herb.name %></a></p>
+     <h2><a href="/herbs/<%= herb.id %>"><%= herb.name %></a></h2>
 <% end %>
+<br>
+<br>
+
+<a href="/herbs/new"><button>Create a New Herb</button></a>
+<a href="/search" style="float: right"><button>Search</button></a>
+
+

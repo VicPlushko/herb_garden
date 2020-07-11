@@ -8,4 +8,5 @@ use Rack::MethodOverride
 
 use HerbsController
 use UsersController
+use SessionsController
 run ApplicationController
