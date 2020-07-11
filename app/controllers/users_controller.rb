@@ -22,8 +22,7 @@ class UsersController < ApplicationController
             end
         else
             flash.now[:signup_fail] = "Please enter a valid email."
-            erb :'user/'
-            # redirect '/signup'
+            redirect '/signup'
         end
     end
 end
