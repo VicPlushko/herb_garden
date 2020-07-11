@@ -184,7 +184,8 @@
     height: 100%;
     display: table;
     float: left;
-    padding: 0px 20px
+    padding: 0px 20px;
+    text-decoration: none;
   }
 
   .navigation a li{
