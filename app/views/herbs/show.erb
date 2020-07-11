@@ -1,45 +1,60 @@
-<h2><%= @herb.name %></h2>
-<br>
-<ul>
-
-  <li><strong>Latin Name:</strong> <%= @herb.latin_name %></li>
-  <br>
-  <li><strong>Family:</strong> <%= @herb.family %></li>
-  <br>
-  <li><strong>Medicinal Parts:</strong> <%= @herb.medicinal_parts %></li>
-  <br>
-  <li><strong>Taste:</strong> <%= @herb.taste %></li>
-  <br>
-  <li><strong>Energetics:</strong> <%= @herb.energetics %></li>
-  <br>
-  <li><strong>Actions:</strong> <%= @herb.actions %></li>
-  <br>
-  <li><strong>Ideal for Addressing:</strong> <%= @herb.ideal_for %></li>
-  <br>
-  <li><strong>Effective Applications:</strong> <%= @herb.applications %></li>
-  <br>
-  <li><strong>Preparation and Dosage:</strong> <%= @herb.dosage %></li>
-  <br>
-  <li><strong>Considerations:</strong> <%= @herb.considerations %></li>
-</ul>
+<div class="notice">
+  <h4><%= flash[:notice] %></h4>
+  </div>
+<div class="notice">
+  <h4><%= flash[:successful_update]%></h4>
+</div>
 <br>
 <br>
 
-  <a href="/herbs/new"><button>Create a New Herb</button></a>
-  <a href="/search" ><button>Search</button></a>
-  <br>
-  <br>
+<h1><%= @herb.name %></h1>
+<br>
+  <ul>
 
-  <a href="/herbs/<%= @herb.id %>/edit"><button>Edit This Herb</button></a>
-  
-  <a href="/herbs"><button>View All My Herbs</button></a>
-  
-  <div class="delete">
+    <li><strong>Latin Name:</strong> <%= @herb.latin_name %></li>
+    <br>
+    <li><strong>Family:</strong> <%= @herb.family %></li>
+    <br>
+    <li><strong>Medicinal Parts:</strong> <%= @herb.medicinal_parts %></li>
+    <br>
+    <li><strong>Taste:</strong> <%= @herb.taste %></li>
+    <br>
+    <li><strong>Energetics:</strong> <%= @herb.energetics %></li>
+    <br>
+    <li><strong>Actions:</strong> <%= @herb.actions %></li>
+    <br>
+    <li><strong>Ideal for Addressing:</strong> <%= @herb.ideal_for %></li>
+    <br>
+    <li><strong>Effective Applications:</strong> <%= @herb.applications %></li>
+    <br>
+    <li><strong>Preparation and Dosage:</strong> <%= @herb.dosage %></li>
+    <br>
+    <li><strong>Considerations:</strong> <%= @herb.considerations %></li>
+  </ul>
+<br>
+<br>
+
+<a href="/herbs/<%= @herb.id %>/edit"><button>Edit This Herb</button></a>
+
+<div class="delete">
   <form method="POST" action="/herbs/<%= @herb.id %>">
       <input type="hidden" id="hidden" name="_method" value="delete">
-      <input type="submit" value="Delete">
+      <input type="submit" id="delete" value="Delete" onclick="return confirm('Are you sure?');">
   </form>
-  </div>
+</div>
+  <br>
+  <br>
+
+  <a href="/herbs/new"><button>Create a New Herb</button></a>
+  <a href="/herbs"><button>View All My Herbs</button></a>
+  <a href="/search" ><button>Search</button></a>
+  
+
+  
+  
+  
+  
+  
   
   
 

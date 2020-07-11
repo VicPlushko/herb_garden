@@ -32,6 +32,7 @@ class HerbsController < ApplicationController
         considerations: params[:considerations],
       )
       if herb.save
+        flash[:notice] = "You have successfully created an herb"
         redirect "/herbs/#{herb.id}"
       else
         redirect "/herbs"
@@ -52,9 +53,14 @@ class HerbsController < ApplicationController
   get '/results' do
     if logged_in?
       @herbs = current_user.herbs.search(params[:search]).order('name ASC')
-      erb :'herbs/results'
+      if @herbs.size > 0
+        erb :'herbs/results'
+      else
+        flash[:search_fail] = "There are no herbs that match your search. Please try again."
+        redirect '/search'
+      end
     else
-      redirect '/search'
+      redirect '/login'
     end
   end
 
@@ -101,6 +107,7 @@ class HerbsController < ApplicationController
           dosage: params[:dosage],
           considerations: params[:considerations],
         )
+          flash[:successful_update] = "You have successfully updated this herb"
           redirect "/herbs/#{herb.id}"
         else
           redirect "/herbs/#{herb.id}/edit"

@@ -5,7 +5,12 @@
         <label for="properites">Search:</label>
         <input type="text" name="search"></h3>
         <br>
+        <div class="alert">
+                <h4><%= flash[:search_fail] %></h4>
+            </div>
         <br>
+            
+
         <input type="submit" value="Submit">
     </form></p>
 

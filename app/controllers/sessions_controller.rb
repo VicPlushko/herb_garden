@@ -9,6 +9,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect "/herbs"
     else
+      flash[:alert] = "Your email or password do not match. Please try again."
       redirect "/login"
     end
   end
