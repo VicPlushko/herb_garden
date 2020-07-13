@@ -53,7 +53,13 @@ class HerbsController < ApplicationController
   get '/results' do
     if logged_in?
       @herbs = current_user.herbs.search(params[:search]).order('name ASC')
-      if @herbs.size > 0
+      if params[:search].blank?
+          flash[:empty_search] = "Please enter a name, taste, energetic, action or what the herb is ideal for."
+          redirect '/search'
+      elsif params[:search].size < 3
+        flash[:invalid_search] = "Search must be a minimum of 3 characters."
+        redirect '/search'
+      elsif @herbs.size > 0
         erb :'herbs/results'
       else
         flash[:search_fail] = "There are no herbs that match your search. Please try again."
@@ -63,6 +69,7 @@ class HerbsController < ApplicationController
       redirect '/login'
     end
   end
+
 
   get "/herbs/:id" do
     if logged_in?
