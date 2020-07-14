@@ -20,14 +20,12 @@ class SessionsController < ApplicationController
   end
 
   get '/about' do
-    if logged_in?
+    not_logged_in
       erb :'sessions/about'
-    end
   end
 
   get '/contact' do
-    if logged_in?
+    not_logged_in
       erb :'sessions/contact'
-    end
   end
 end
