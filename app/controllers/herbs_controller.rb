@@ -1,23 +1,17 @@
 class HerbsController < ApplicationController
   get "/herbs" do
-    if logged_in?
+    not_logged_in
       @herbs = current_user.herbs.order('name ASC')
       erb :'herbs/index'
-    else
-      redirect "/login"
-    end
   end
 
   get "/herbs/new" do
-    if logged_in?
+    not_logged_in
       erb :'herbs/new'
-    else
-      redirect "/login"
-    end
   end
 
   post "/herbs" do
-    if logged_in?
+    not_logged_in
       herb = current_user.herbs.build(
         name: params[:name],
         latin_name: params[:latin_name],
@@ -37,21 +31,15 @@ class HerbsController < ApplicationController
       else
         redirect '/herbs'
       end
-    else
-      redirect "/login"
-    end
   end
 
   get '/search' do
-    if logged_in?
+    not_logged_in
       erb :'/herbs/search'
-    else
-      redirect '/login'
-    end
   end
 
   get '/results' do
-    if logged_in?
+    not_logged_in
       @herbs = current_user.herbs.search(params[:search]).order('name ASC')
       if params[:search].blank?
           flash[:empty_search] = "Please enter a name, taste, energetic, action or what the herb is ideal for."
@@ -65,40 +53,31 @@ class HerbsController < ApplicationController
         flash[:search_fail] = "There are no herbs that match your search. Please try again."
         redirect '/search'
       end
-    else
-      redirect '/login'
-    end
   end
 
 
   get "/herbs/:id" do
-    if logged_in?
+    not_logged_in
       @herb = current_user.herbs.find_by_id(params[:id])
       if @herb
         erb :'/herbs/show'
       else
         redirect "/herbs"
       end
-    else
-      redirect "/login"
-    end
   end
 
   get "/herbs/:id/edit" do
-    if logged_in?
+    not_logged_in
       @herb = current_user.herbs.find_by_id(params[:id])
       if @herb
         erb :'/herbs/edit'
       else
         redirect "/herbs"
       end
-    else
-      redirect "/login"
-    end
   end
 
   patch "/herbs/:id" do
-    if logged_in?
+    not_logged_in
       herb = current_user.herbs.find_by_id(params[:id])
       if herb
         if herb.update(
@@ -123,20 +102,16 @@ class HerbsController < ApplicationController
       else
         redirect "/herbs"
       end
-    else
-      redirect "/login"
-    end
   end
 
   delete "/herbs/:id" do
-    if logged_in?
+      not_logged_in
       herb = current_user.herbs.find_by_id(params[:id])
       if herb
         herb.delete
       end
       redirect "/herbs"
-    else
-      redirect "/login"
     end
-  end
 end
+
+
