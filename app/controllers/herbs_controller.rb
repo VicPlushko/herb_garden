@@ -35,7 +35,7 @@ class HerbsController < ApplicationController
         flash[:notice] = "You have successfully created an herb."
         redirect "/herbs/#{herb.id}"
       else
-        redirect "/herbs"
+        redirect '/herbs'
       end
     else
       redirect "/login"
