@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-    get "/login" do
+  get "/login" do
     erb :'sessions/login'
   end
 
@@ -14,18 +14,18 @@ class SessionsController < ApplicationController
     end
   end
 
-  get '/logout' do
+  get "/logout" do
     session.clear
-    redirect '/'
+    redirect "/"
   end
 
-  get '/about' do
+  get "/about" do
     not_logged_in
-      erb :'sessions/about'
+    erb :'sessions/about'
   end
 
-  get '/contact' do
+  get "/contact" do
     not_logged_in
-      erb :'sessions/contact'
+    erb :'sessions/contact'
   end
 end
