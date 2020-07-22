@@ -41,6 +41,7 @@ class HerbsController < ApplicationController
   get "/results" do
     not_logged_in
     @herbs = current_user.herbs.search(params[:search]).order("name ASC")
+    flash[:search] = params[:search]
     if params[:search].blank?
       flash[:empty_search] = "Please enter a name, taste, energetic, action or what the herb is ideal for."
       redirect "/search"

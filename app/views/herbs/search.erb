@@ -3,7 +3,7 @@
 
     <h2><form method="GET" action="/results">
         <label for="properites">Search:</label>
-        <input type="text" name="search"></h2>
+        <input type="text" name="search" value=<%= flash[:search] %>></h2>
         <br>
             <div class="alert">
                 <h4><%= flash[:empty_search] %></h4>
